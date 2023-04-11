@@ -9,12 +9,14 @@ import Lappy4 from "../../../../assets/Home/laptop4.png";
 
 const images = [Lappy1, Lappy2, Lappy3, Lappy4];
 
-const Slider = () => {
+const Slider = ({ imageClick, handleImageClick }) => {
   return (
     <Carousel
       animation="slide"
       autoPlay={true}
       navButtonsAlwaysVisible={true}
+      index={imageClick}
+      onSlideChanged={handleImageClick}
       indicatorContainerProps={{
         sx: {
           display: "flex",

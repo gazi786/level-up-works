@@ -1,6 +1,8 @@
 import { Box, styled, Link } from "@mui/material";
 import React from "react";
 import LevelUpWorksWhite from "../../../../assets/NavBar/LevelUpWorksWhite.png";
+import LevelUpWorksBlue from "../../../../assets/NavBar/LevelUpWorks-blue.png";
+import { useLocation } from "react-router-dom";
 
 const Logo = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -27,11 +29,24 @@ const LogoImage = styled("img")({
 });
 
 const LogoElm = () => {
+  const location = useLocation();
+  const isDashboardPage = location.pathname.startsWith("/dashboard");
+  const isWildPath = location.pathname === "*";
   return (
     <Logo>
-      <Link href="/">
-        <LogoImage src={LevelUpWorksWhite} alt="Level Up Works Logo" />
-      </Link>
+      {isDashboardPage ? (
+        <Link href="/dashboard">
+          <LogoImage src={LevelUpWorksBlue} alt="Level Up Works Logo Blue" />
+        </Link>
+      ) : isWildPath ? (
+        <Link href="/dashboard">
+          <LogoImage src={LevelUpWorksBlue} alt="Level Up Works Logo Blue" />
+        </Link>
+      ) : (
+        <Link href="/">
+          <LogoImage src={LevelUpWorksWhite} alt="Level Up Works Logo White" />
+        </Link>
+      )}
     </Logo>
   );
 };

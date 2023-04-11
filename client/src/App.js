@@ -1,45 +1,37 @@
-import { Box, ThemeProvider } from '@mui/material'
-// import HomePage from './components/Home/HomePageMain'
-
 import { ThemeProvider } from '@mui/material'
 import React, { useState } from 'react'
 import { myCustomtheme } from './theme'
-import RouterLinks from './routes'
-import Navbar from './components/Navigation/NavBar/NavbarMain'
-// import HomePage from './components/Home/HomePageMain'
-import Footer from './components/Navigation/Footer/FooterMain'
-import { myCustomtheme } from './theme'
+import RouterLinks from './routes/routes'
+
 import './App.css'
-// import StudentProfileViewerPage from './Pages/StudentProfileViewerPage'
-// import StudentProfile from './components/StudentProfiles/StudentProfiles'
-// import ProjectLibraryPage from './Pages/StudentProjectLibraryPage'
+import { AuthProvider } from './store/management/AuthContext'
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [accessType, setaccessType] = useState("");
+  const [accessType, setaccessType] = useState(""); //either Login or Signup
 
   const handleModalOpen = (type) => {
     setOpenModal(true);
     setaccessType(accessType === type ? "" : type);
-
   }
 
   const handleModalClose = () => setOpenModal(false);
 
   return (
-
     <ThemeProvider theme={myCustomtheme}>
-      <Box>
-        <Navbar />
-        {/* <StudentProfileViewerPage /> */}
-        {/* <StudentProjectLibraryPage /> */}
-        {/* <StudentProfile></StudentProfile> */}
-        <Footer />
-      </Box>
-      <Navbar handleModalOpen={(type) => handleModalOpen(type)} accessType={accessType} />
-      <RouterLinks openModal={openModal} handleModalOpen={(type) => handleModalOpen(type)} handleModalClose={handleModalClose} accessType={accessType} />
-    </ThemeProvider>
+      <AuthProvider >
 
+        <RouterLinks
+          modalProps={{
+            openModal: openModal,
+            handleModalOpen: (type) => handleModalOpen(type),
+            handleModalClose: handleModalClose,
+            accessType: accessType
+          }}
+        />
+
+      </AuthProvider>
+    </ThemeProvider>
   );
 };
 

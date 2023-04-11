@@ -49,7 +49,7 @@ const DigitalSkillSection = () => {
           </Grid>
           {programme.map((item, index) => (
             <Grid item key={index} xs={12} md={3}>
-              <Box sx={{ height: imageHeight }}>
+              <Box sx={{ height: imageHeight, cursor: "pointer" }}>
                 <CardMedia
                   component="img"
                   height={{ xs: 272 }}

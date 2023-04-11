@@ -1,20 +1,16 @@
 import {
   Backdrop,
-  Box,
   CardMedia,
   Container,
   Divider,
   Fade,
   Grid,
   Modal as MuiModal,
-  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import LogIn from "./LogIn";
-import SignUp from "./SignUp";
 import CloseImage from "../../../assets/LoginSignup/esc.png";
-import StudentsImage from "../../../assets/LoginSignup/students.png";
-import TeachersImage from "../../../assets/LoginSignup/teachers.png";
+import StudentForm from "./ModalElements/StudentForm";
+import TeacherForm from "./ModalElements/TeacherForm";
 
 const style = {
   position: "absolute",
@@ -31,9 +27,9 @@ const style = {
 const AccessModal = ({ openModal, handleModalClose, accessType }) => {
   const [activeLink, setActiveLink] = useState(accessType);
 
-  const handleClick = (newLink) => {
+  const handleTitleClick = (newLink) => {
     setActiveLink(activeLink === newLink ? newLink : newLink);
-    accessType = newLink;
+    // accessType = newLink;
   };
 
   useEffect(() => {
@@ -84,183 +80,21 @@ const AccessModal = ({ openModal, handleModalClose, accessType }) => {
             }}
           />
           <Grid container direction="row">
-            <Grid
-              item
-              xs
-              container
-              justifyContent={"center"}
-              alignItems={"center"}
-              direction={"column"}
-            >
-              <Grid item xs>
-                <CardMedia
-                  component="img"
-                  image={StudentsImage}
-                  alt="Students Image"
-                  sx={{
-                    width: "250px",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </Grid>
-              <Grid item xs>
-                <Typography
-                  variant="h4"
-                  component="p"
-                  sx={{
-                    fontFamily: "Nunito",
-                    fontSize: "2.625rem",
-                    fontWeight: 900,
-                    color: "#707070",
-                  }}
-                >
-                  Students
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                gap="1rem"
-                mt="2rem"
-              >
-                <Typography
-                  variant="h6"
-                  component="p"
-                  sx={{
-                    fontFamily: "Open Sans",
-                    fontSize: "1.125rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    color: "#707070",
-                    ...modalLinks({
-                      isActive: activeLink === "log-in",
-                      newLink: "log-in",
-                    }),
-                  }}
-                  onClick={() => handleClick("log-in")}
-                >
-                  LOG IN
-                </Typography>
-                <Typography
-                  variant="h6"
-                  component="p"
-                  sx={{
-                    fontFamily: "Open Sans",
-                    fontSize: "1.125rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    color: "#707070",
-                    ...modalLinks({
-                      isActive: activeLink === "sign-up",
-                      newLink: "sign-up",
-                    }),
-                  }}
-                  onClick={() => handleClick("sign-up")}
-                >
-                  SIGN UP
-                </Typography>
-              </Grid>
-              <Grid item xs>
-                {activeLink === "log-in" && <LogIn />}
-                {activeLink === "sign-up" && <SignUp />}
-              </Grid>
-            </Grid>
+            <StudentForm
+              modalLinks={modalLinks}
+              activeLink={activeLink}
+              handleTitleClick={handleTitleClick}
+            />
             <Divider
               orientation="vertical"
               flexItem
               sx={{ height: "inherit", border: "1px solid #707070" }}
             />
-            <Grid
-              item
-              xs
-              container
-              justifyContent={"center"}
-              alignItems={"center"}
-              direction={"column"}
-            >
-              <Grid item xs>
-                <CardMedia
-                  component="img"
-                  image={TeachersImage}
-                  alt="Teachers Image"
-                  sx={{
-                    width: "250px",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </Grid>
-              <Grid item xs>
-                <Typography
-                  variant="h4"
-                  component="p"
-                  sx={{
-                    fontFamily: "Nunito",
-                    fontSize: "2.625rem",
-                    fontWeight: 900,
-                    color: "#707070",
-                  }}
-                >
-                  Teachers
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                gap="1rem"
-                mt="2rem"
-              >
-                <Typography
-                  variant="h6"
-                  component="p"
-                  sx={{
-                    fontFamily: "Open Sans",
-                    fontSize: "1.125rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    color: "#707070",
-                    ...modalLinks({
-                      isActive: activeLink === "log-in",
-                      newLink: "log-in",
-                    }),
-                  }}
-                  onClick={() => handleClick("log-in")}
-                >
-                  LOG IN
-                </Typography>
-                <Typography
-                  variant="h6"
-                  component="p"
-                  sx={{
-                    fontFamily: "Open Sans",
-                    fontSize: "1.125rem",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    color: "#707070",
-                    ...modalLinks({
-                      isActive: activeLink === "sign-up",
-                      newLink: "sign-up",
-                    }),
-                  }}
-                  onClick={() => handleClick("sign-up")}
-                >
-                  SIGN UP
-                </Typography>
-              </Grid>
-              <Grid item xs>
-                {activeLink === "log-in" && <LogIn />}
-                {activeLink === "sign-up" && <SignUp />}
-              </Grid>
-            </Grid>
+            <TeacherForm
+              modalLinks={modalLinks}
+              activeLink={activeLink}
+              handleTitleClick={handleTitleClick}
+            />
           </Grid>
         </Container>
       </Fade>

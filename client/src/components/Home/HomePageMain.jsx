@@ -7,12 +7,9 @@ import ProgrammeSection from "./HomeElements/ProgrammeSection";
 import WhatWaitingSection from "./HomeElements/WhatWaitingSection";
 import AccessModal from "./Access/AccessModal";
 
-const HomePageMain = ({
-  openModal,
-  handleModalOpen,
-  handleModalClose,
-  accessType,
-}) => {
+const HomePageMain = ({ modalProps }) => {
+  const { openModal, handleModalOpen, handleModalClose, accessType } =
+    modalProps;
   return (
     <Box>
       <Hero handleModalOpen={(type) => handleModalOpen(type)} />

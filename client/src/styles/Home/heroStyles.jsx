@@ -41,6 +41,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   opacity: 0.8,
   fontWeight: "bold",
   lineHeight: "3.5rem",
+  fontFamily: "Nunito, sans-serif",
   "& .future": { color: "#42C0F6", fontWeight: 900 },
   [theme.breakpoints.down("sm")]: {
     fontSize: "2rem",

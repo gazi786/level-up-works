@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   CardMedia,
@@ -39,6 +39,12 @@ const AboutSection = () => {
   const imageHeight = theme.breakpoints.values.md > 960 ? "20%" : "5%";
   const imageWidth = "100%";
 
+  const [imageClick, setImageClick] = useState(0);
+
+  const handleImageClick = (index) => {
+    setImageClick(index);
+  };
+
   return (
     <SectionBox>
       <Container maxWidth="lg">
@@ -69,7 +75,14 @@ const AboutSection = () => {
                   <Grid container justifyContent="center" spacing={1}>
                     {itemData.map((item, index) => (
                       <Grid item key={index} xs={6} sm={4} md={3}>
-                        <Box sx={{ height: imageHeight }}>
+                        <Box
+                          sx={{
+                            height: imageHeight,
+                            cursor: "pointer",
+                            "&:hover": { opacity: 0.5 },
+                          }}
+                          onClick={() => handleImageClick(index)}
+                        >
                           <CardMedia
                             component="img"
                             image={item.src}
@@ -89,7 +102,10 @@ const AboutSection = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <HomeCarousel />
+            <HomeCarousel
+              imageClick={imageClick}
+              handleImageClick={handleImageClick}
+            />
           </Grid>
         </Grid>
       </Container>
