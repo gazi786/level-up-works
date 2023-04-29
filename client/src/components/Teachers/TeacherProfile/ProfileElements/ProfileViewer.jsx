@@ -12,7 +12,7 @@ import {
   LevelUpButtons,
   NavigationBtns,
 } from "../../../../styles/General/Buttons";
-import useGetFetch from "../../../../store/useGetFetch";
+import useGetFetch from "../../../../hooks/useGetFetch";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 

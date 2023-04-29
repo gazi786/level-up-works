@@ -5,7 +5,7 @@ import StudentsImage from "../../../../assets/LoginSignup/students.png";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import { useNavigate } from "react-router-dom";
-import usePostFetch from "../../../../store/usePostFetch";
+import usePostFetch from "../../../../hooks/usePostFetch";
 import { AuthContext } from "../../../../contexts/AuthContext";
 
 const StudentForm = ({ modalLinks, activeLink, handleTitleClick }) => {

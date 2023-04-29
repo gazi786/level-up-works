@@ -3,7 +3,7 @@ import './StudentProfileViewerPage.css';
 // import JsonData from './StudentProfileViewerData.json';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useGetFetch from "../../../../store/useGetFetch";
+import useGetFetch from "../../../../hooks/useGetFetch";
 import { AuthContext } from "../../../../contexts/AuthContext";
 
 function StudentProfileViewerPage() {

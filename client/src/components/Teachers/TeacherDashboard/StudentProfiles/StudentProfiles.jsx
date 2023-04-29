@@ -1,5 +1,5 @@
 import React from "react";
-import useGetFetch from "../../../../store/useGetFetch";
+import useGetFetch from "../../../../hooks/useGetFetch";
 import {
   Avatar,
   Box,
@@ -14,11 +14,9 @@ import { useNavigate } from "react-router-dom";
 
 const StudentProfiles = () => {
   const navigate = useNavigate();
-  const {
-    error,
-    isPending,
-    data: students,
-  } = useGetFetch(`http://localhost:4000/api/v1/student`);
+  const { error, isPending, data: students } = useGetFetch(
+    `http://localhost:4000/api/v1/student`
+  );
 
   return (
     <Box

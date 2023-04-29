@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useGetFetch from "../../../../store/useGetFetch";
+import useGetFetch from "../../../../hooks/useGetFetch";
 import moment from "moment";
 import {
   Avatar,
@@ -32,11 +32,9 @@ const BpIcon = styled("span")(({ theme }) => ({
 const HelpRequests = () => {
   const [requestData, setRequestData] = useState([]);
 
-  const {
-    error,
-    isPending,
-    data: helpRequests,
-  } = useGetFetch(`http://localhost:4000/api/v1/help-requests`);
+  const { error, isPending, data: helpRequests } = useGetFetch(
+    `http://localhost:4000/api/v1/help-requests`
+  );
 
   useEffect(() => {
     if (helpRequests && helpRequests.length >= 0) {
