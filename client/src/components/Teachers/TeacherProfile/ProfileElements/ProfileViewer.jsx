@@ -13,7 +13,7 @@ import {
   NavigationBtns,
 } from "../../../../styles/General/Buttons";
 import useGetFetch from "../../../../store/useGetFetch";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const ProfileViewer = () => {

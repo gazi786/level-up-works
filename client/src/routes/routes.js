@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Routes, } from "react-router-dom";
 
-import { AuthContext } from '../store/management/AuthContext';
+import { AuthContext } from '../contexts/AuthContext';
 
 import NoMatch from "../views/NoMatch";
 import Home from "../views/Home";
@@ -26,25 +26,15 @@ import LearningObjectivesT from '../components/Teachers/LearningDashboard/Learni
 import InstructionsT from '../components/Teachers/LearningDashboard/Instructions/InstructionsT';
 
 
-const RouterLinks = ({ modalProps }) => {
-	const { openModal, handleModalOpen, handleModalClose, accessType } = modalProps;
-	const { role } = useContext(AuthContext);
+const RouterLinks = () => {
 
+	const { role } = useContext(AuthContext);
 
 	return (
 		<Routes>
-			<Route path="/" element={<Home modalProps={{
-				openModal: openModal,
-				handleModalOpen: (type) => handleModalOpen(type),
-				handleModalClose: handleModalClose,
-				accessType: accessType
-			}} />} />
-			<Route path="/home" element={<Home modalProps={{
-				openModal: openModal,
-				handleModalOpen: (type) => handleModalOpen(type),
-				handleModalClose: handleModalClose,
-				accessType: accessType
-			}} />} />
+			<Route path="/" element={<Home
+			/>} />
+			<Route path="/home" element={<Home />} />
 
 			{role === 'teacher' && (
 				<Route path="/dashboard" element={<Dashboard />} >
@@ -83,12 +73,8 @@ const RouterLinks = ({ modalProps }) => {
 				</Route>
 
 			)}
-			<Route path="*" element={<NoMatch modalProps={{
-				openModal: openModal,
-				handleModalOpen: (type) => handleModalOpen(type),
-				handleModalClose: handleModalClose,
-				accessType: accessType
-			}} />} />
+			<Route path="*" element={<NoMatch
+			/>} />
 
 		</Routes>
 	);

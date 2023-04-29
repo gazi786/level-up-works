@@ -6,7 +6,7 @@ import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import { useNavigate } from "react-router-dom";
 import usePostFetch from "../../../../store/usePostFetch";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 
 const TeacherForm = ({ modalLinks, activeLink, handleTitleClick }) => {
   const [userData, setUserData] = useState(null);

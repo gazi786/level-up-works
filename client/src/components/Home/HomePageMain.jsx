@@ -7,21 +7,15 @@ import ProgrammeSection from "./HomeElements/ProgrammeSection";
 import WhatWaitingSection from "./HomeElements/WhatWaitingSection";
 import AccessModal from "./Access/AccessModal";
 
-const HomePageMain = ({ modalProps }) => {
-  const { openModal, handleModalOpen, handleModalClose, accessType } =
-    modalProps;
+const HomePageMain = () => {
   return (
     <Box>
-      <Hero handleModalOpen={(type) => handleModalOpen(type)} />
+      <Hero />
       <AboutSection />
       <DigitalSkillSection />
       <ProgrammeSection />
-      <WhatWaitingSection handleModalOpen={(type) => handleModalOpen(type)} />
-      <AccessModal
-        openModal={openModal}
-        handleModalClose={handleModalClose}
-        accessType={accessType}
-      />
+      <WhatWaitingSection />
+      <AccessModal />
     </Box>
   );
 };

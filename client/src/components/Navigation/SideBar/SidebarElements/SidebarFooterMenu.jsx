@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { sideBarSmallMenu } from "../SideBarData/SideBarFooterItems";
 import { Box, IconButton, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 
 const SidebarFooterMenu = ({ open }) => {
   const navigate = useNavigate();

@@ -5,7 +5,7 @@ import NavigationDashboard from "../components/Navigation/NavBar/NavigationDashb
 import SideBar from "../components/Navigation/SideBar/SideBar";
 import { Box, Stack } from "@mui/material";
 import FooterDashboard from "../components/Navigation/Footer/FooterDashboard";
-import { AuthContext } from "../store/management/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 import { useLocation } from "react-router-dom";
 import TeacherLearningDashboard from "./Dashboard/TeacherLearningDashboard";
 

@@ -4,7 +4,7 @@ import './StudentProfileViewerPage.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useGetFetch from "../../../../store/useGetFetch";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 
 function StudentProfileViewerPage() {
 

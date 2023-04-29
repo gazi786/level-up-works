@@ -4,21 +4,15 @@ import FooterPaged from "../components/Navigation/Footer/FooterPaged";
 import NavigationPaged from "../components/Navigation/NavBar/NavigationPaged";
 import { LevelUpButtons } from "../styles/General/Buttons";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../store/management/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 
-const NoMatch = ({ modalProps }) => {
-  const { openModal, handleModalOpen, handleModalClose, accessType } =
-    modalProps;
-
+const NoMatch = () => {
   const { role } = useContext(AuthContext);
 
   const navigate = useNavigate();
   return (
     <Box>
-      <NavigationPaged
-        handleModalOpen={(type) => handleModalOpen(type)}
-        accessType={accessType}
-      />
+      <NavigationPaged />
       <Container maxWidth="lg">
         <Box
           sx={{

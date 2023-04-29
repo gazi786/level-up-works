@@ -75,7 +75,7 @@ const StyledMobileLink = styled(Link)(({ theme }) => ({
   marginBottom: "0.75rem",
 }));
 
-const MobileMenu = ({ pages, renderSwitch, handleModalOpen, accessType }) => {
+const MobileMenu = ({ pages, renderSwitch }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -126,10 +126,7 @@ const MobileMenu = ({ pages, renderSwitch, handleModalOpen, accessType }) => {
         </StyledMenuItem>
         <Divider />
         <StyledMenuItem onClick={handleCloseNavMenu}>
-          <LoginElm
-            handleModalOpen={(type) => handleModalOpen(type)}
-            accessType={accessType}
-          />
+          <LoginElm />
         </StyledMenuItem>
 
         <Divider />

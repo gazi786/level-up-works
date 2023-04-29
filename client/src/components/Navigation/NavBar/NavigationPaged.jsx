@@ -55,7 +55,7 @@ const LoginPanel = styled(Box)(({ theme }) => ({
   },
 }));
 
-const NavigationPaged = ({ handleModalOpen, accessType }) => {
+const NavigationPaged = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: "#43C0F6" }}>
       <Container maxWidth="lg">
@@ -85,18 +85,10 @@ const NavigationPaged = ({ handleModalOpen, accessType }) => {
           </MenuBox>
           <LoginPanel>
             <LangElm />
-            <LoginElm
-              handleModalOpen={(type) => handleModalOpen(type)}
-              accessType={accessType}
-            />
+            <LoginElm />
           </LoginPanel>
           {/* Mobile Menu */}
-          <MobileMenu
-            pages={pages}
-            renderSwitch={renderSwitch}
-            handleModalOpen={(type) => handleModalOpen(type)}
-            accessType={accessType}
-          />
+          <MobileMenu pages={pages} renderSwitch={renderSwitch} />
           {/* Mobile Menu End */}
         </StyledToolbar>
       </Container>

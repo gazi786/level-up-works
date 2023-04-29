@@ -1,13 +1,16 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import {
   HeroBox,
   HeroTitle,
   HeroSignUpBox,
 } from "../../../styles/Home/heroStyles";
 import { LevelUpButtons } from "../../../styles/General/Buttons";
+import { ModalContext } from "../../../contexts/ModalContext";
 
-const Hero = ({ handleModalOpen, accessType }) => {
+const Hero = () => {
+  const { handleModalOpen, accessType } = useContext(ModalContext);
+
   return (
     <HeroBox>
       <Container maxWidth="lg">

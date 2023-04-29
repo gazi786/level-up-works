@@ -4,24 +4,11 @@ import FooterPaged from "../components/Navigation/Footer/FooterPaged";
 import Navbar from "../components/Navigation/NavBar/NavigationPaged";
 import NavigationPaged from "../components/Navigation/NavBar/NavigationPaged";
 
-const Home = ({ modalProps }) => {
-  const { openModal, handleModalOpen, handleModalClose, accessType } =
-    modalProps;
-
+const Home = () => {
   return (
     <>
-      <NavigationPaged
-        handleModalOpen={(type) => handleModalOpen(type)}
-        accessType={accessType}
-      />
-      <HomePageMain
-        modalProps={{
-          openModal: openModal,
-          handleModalOpen: (type) => handleModalOpen(type),
-          handleModalClose: handleModalClose,
-          accessType: accessType,
-        }}
-      />
+      <NavigationPaged />
+      <HomePageMain />
       <FooterPaged />
     </>
   );

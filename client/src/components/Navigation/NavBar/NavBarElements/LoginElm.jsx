@@ -1,6 +1,7 @@
 import { Box, styled, Link, Divider } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
-import React from "react";
+import React, { useContext } from "react";
+import { ModalContext } from "../../../../contexts/ModalContext";
 
 const LoginBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -39,7 +40,8 @@ const StyledLink = styled(Link)(({ theme }) => ({
   },
 }));
 
-const LoginElm = ({ handleModalOpen, accessType }) => {
+const LoginElm = () => {
+  const { handleModalOpen, accessType } = useContext(ModalContext);
   return (
     <LoginBox>
       <AccountCircle

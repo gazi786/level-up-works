@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CardMedia, Container, Grid, Typography } from "@mui/material";
 import { SectionBox } from "../../../styles/General/Layout";
 import { LevelUpButtons } from "../../../styles/General/Buttons";
 import Classroom from "../../../assets/Home/classroom.png";
+import { ModalContext } from "../../../contexts/ModalContext";
 
-const WhatWaitingSection = ({ handleModalOpen, accessType }) => {
+const WhatWaitingSection = () => {
+  const { handleModalOpen, accessType } = useContext(ModalContext);
   return (
     <SectionBox>
       <Container maxWidth="lg">

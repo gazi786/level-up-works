@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { MuiDrawer } from "../../../styles/Dashboard/leftSidebar";
 import { useNavigate } from "react-router-dom";
 import TeacherSideBar from "./SidebarElements/TeacherSideBar";
-import { AuthContext } from "../../../store/management/AuthContext";
+import { AuthContext } from "../../../contexts/AuthContext";
 import StudentSideBar from "./SidebarElements/StudentSideBar";
 
 const SideBar = ({ sideBarProps }) => {

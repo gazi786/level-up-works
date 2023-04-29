@@ -19,7 +19,7 @@ import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import SidebarFooterMenu from "./SidebarFooterMenu";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useGetFetch from "../../../../store/useGetFetch";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 
 const TeacherSideBar = ({ teacherSBProps }) => {
   const { open, handleDrawerOpen, handleDrawerClose } = teacherSBProps;

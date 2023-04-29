@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../store/management/AuthContext";
+import { AuthContext } from "../../../../contexts/AuthContext";
 import useGetFetch from "../../../../store/useGetFetch";
 
 const LoginBox = styled(Box)(({ theme }) => ({

@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import styles from "./ProjectLibraryPage.module.css"
 import { useEffect, useState } from "react";
-import { AuthContext } from "../../store/management/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 // import useGetFetch from "../../store/useGetFetch";
 
