@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Toolbar, styled, Link, AppBar, Container } from "@mui/material";
 import LangElm from "./NavBarElements/LangElm";
 import LogoElm from "./NavBarElements/LogoElm";
 import LoginElm from "./NavBarElements/LoginElm";
 import MobileMenu from "./NavBarElements/MobileMenu";
+import { AuthContext } from "../../../contexts/AuthContext";
+import ProfileLogged from "./NavBarElements/ProfileLogged";
 
 const pages = ["Home", "Features", "Teachers"];
 
@@ -56,6 +58,8 @@ const LoginPanel = styled(Box)(({ theme }) => ({
 }));
 
 const NavigationPaged = () => {
+  const { isLoggedIn } = useContext(AuthContext);
+  console.log(isLoggedIn);
   return (
     <AppBar position="static" sx={{ backgroundColor: "#43C0F6" }}>
       <Container maxWidth="lg">
@@ -85,7 +89,7 @@ const NavigationPaged = () => {
           </MenuBox>
           <LoginPanel>
             <LangElm />
-            <LoginElm />
+            {isLoggedIn ? <ProfileLogged /> : <LoginElm />}
           </LoginPanel>
           {/* Mobile Menu */}
           <MobileMenu pages={pages} renderSwitch={renderSwitch} />

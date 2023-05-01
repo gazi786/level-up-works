@@ -8,10 +8,10 @@ import {
   Modal as MuiModal,
 } from "@mui/material";
 import React, { useEffect, useState, useContext } from "react";
-import CloseImage from "../../../assets/LoginSignup/esc.png";
+import CloseImage from "../../assets/LoginSignup/esc.png";
 import StudentForm from "./ModalElements/StudentForm";
 import TeacherForm from "./ModalElements/TeacherForm";
-import { ModalContext } from "../../../contexts/ModalContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
 const style = {
   position: "absolute",

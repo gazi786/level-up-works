@@ -4,19 +4,22 @@ import { LevelUpButtons } from "../../../styles/General/Buttons";
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
   width: "300px",
-  border: " 0.2rem solid #A29F9F",
-  borderRadius: "1.5rem",
   fontSize: "0.85rem",
-  height: "1.5rem",
+  "& .MuiOutlinedInput-root": {
+    border: "#A29F9F 0.2rem",
+    borderRadius: "1.5rem",
+  },
 }));
 
-const LogIn = () => {
+const SignUp = () => {
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(fullName, email, password, confirmPassword);
   };
 
   return (
@@ -31,6 +34,12 @@ const LogIn = () => {
         gap: "2rem",
       }}
     >
+      <StyledTextField
+        label="Full Name"
+        required
+        value={fullName}
+        onChange={(e) => setFullName(e.target.value)}
+      />
       <StyledTextField
         label="Email"
         type="email"
@@ -48,6 +57,13 @@ const LogIn = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
+      <StyledTextField
+        label="Confirm Password"
+        variant="outlined"
+        required
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+      />
       <div>
         <LevelUpButtons
           variant="contained"
@@ -55,11 +71,11 @@ const LogIn = () => {
           type="submit"
           sx={{ margin: "2rem" }}
         >
-          LOG IN
+          SIGN UP
         </LevelUpButtons>
       </div>
     </form>
   );
 };
 
-export default LogIn;
+export default SignUp;

@@ -1,6 +1,6 @@
 import { Box, styled, TextField } from "@mui/material";
 import React, { useState } from "react";
-import { LevelUpButtons } from "../../../../styles/General/Buttons";
+import { LevelUpButtons } from "../../../styles/General/Buttons";
 const StyledTextField = styled(TextField)(({ theme }) => ({
   width: "300px",
   fontSize: "0.85rem",

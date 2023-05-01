@@ -1,12 +1,12 @@
 import { CardMedia, Grid, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 
-import TeachersImage from "../../../../assets/LoginSignup/teachers.png";
+import TeachersImage from "../../../assets/LoginSignup/teachers.png";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import { useNavigate } from "react-router-dom";
-import usePostFetch from "../../../../hooks/usePostFetch";
-import { AuthContext } from "../../../../contexts/AuthContext";
+import usePostFetch from "../../../hooks/usePostFetch";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const TeacherForm = ({ modalLinks, activeLink, handleTitleClick }) => {
   const [userData, setUserData] = useState(null);

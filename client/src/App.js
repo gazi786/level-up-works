@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import { myCustomtheme } from './theme'
 import RouterLinks from './routes/routes'
-
+import AccessModal from './components/Access/AccessModal'
 import './App.css'
 import { AuthProvider } from './contexts/AuthContext'
 import { ModalProvider } from './contexts/ModalContext'
@@ -14,6 +14,7 @@ const App = () => {
         <ModalProvider>
           <RouterLinks
           />
+          <AccessModal />
         </ModalProvider>
       </AuthProvider>
     </ThemeProvider>

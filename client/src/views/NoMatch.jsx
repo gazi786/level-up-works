@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 const NoMatch = () => {
-  const { role } = useContext(AuthContext);
+  const { role, isLoggedIn } = useContext(AuthContext);
 
   const navigate = useNavigate();
   return (
@@ -48,19 +48,21 @@ const NoMatch = () => {
             >
               Back to Home
             </LevelUpButtons>
-            <LevelUpButtons
-              variant="contained"
-              className="btn secondary-btn"
-              onClick={() =>
-                navigate(
-                  role === "teacher"
-                    ? `/dashboard/teacher/progress-tracker`
-                    : `/dashboard/student/learning-objectives`
-                )
-              }
-            >
-              Back to Dashboard
-            </LevelUpButtons>
+            {isLoggedIn && (
+              <LevelUpButtons
+                variant="contained"
+                className="btn secondary-btn"
+                onClick={() =>
+                  navigate(
+                    role === "teacher"
+                      ? `/dashboard/teacher/progress-tracker`
+                      : `/dashboard/student/learning-objectives`
+                  )
+                }
+              >
+                Back to Dashboard
+              </LevelUpButtons>
+            )}
           </Box>
         </Box>
       </Container>

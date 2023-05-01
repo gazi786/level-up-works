@@ -24,33 +24,36 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    setIsLoggedIn(true);
-    setToken(token);
-    setRole(role);
-    setEmail(email);
-    setUserId(userId);
 
-    localStorage.setItem('token', token);
-    localStorage.setItem('role', role);
-    localStorage.setItem('email', email);
-    localStorage.setItem('user_id', userId);
+    setIsLoggedIn(true);
+    setToken(userData.token);
+    setRole(userData.role);
+    setEmail(userData.userEmail);
+    setUserId(userData.userID);
+
+    localStorage.setItem('token', userData.token);
+    localStorage.setItem('role', userData.role);
+    localStorage.setItem('email', userData.userEmail);
+    localStorage.setItem('user_id', userData.userID);
+    // localStorage.setItem('isLoggedIn', isLoggedIn);
   };
 
   const logout = () => {
     setIsLoggedIn(false);
-
     setToken(null);
     setRole(null);
     setEmail(null);
+    setUserId(null);
 
     localStorage.removeItem('token');
     localStorage.removeItem('role');
     localStorage.removeItem('email');
-    localStorage.removeItem('user_id', userId);
+    localStorage.removeItem('user_id');
+    // localStorage.removeItem('isLoggedIn');
   };
 
   return (
-    <AuthContext.Provider value={{ token, setToken, role, setRole, email, setEmail, userId, setUserId, isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ token, setToken, role, setRole, email, setEmail, userId, setUserId, isLoggedIn, setIsLoggedIn, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

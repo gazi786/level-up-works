@@ -5,7 +5,6 @@ import AboutSection from "./HomeElements/AboutSection";
 import DigitalSkillSection from "./HomeElements/DigitalSkillSection";
 import ProgrammeSection from "./HomeElements/ProgrammeSection";
 import WhatWaitingSection from "./HomeElements/WhatWaitingSection";
-import AccessModal from "./Access/AccessModal";
 
 const HomePageMain = () => {
   return (
@@ -15,7 +14,6 @@ const HomePageMain = () => {
       <DigitalSkillSection />
       <ProgrammeSection />
       <WhatWaitingSection />
-      <AccessModal />
     </Box>
   );
 };

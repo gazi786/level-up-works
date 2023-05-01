@@ -50,7 +50,6 @@ const ProfileLogged = () => {
 
   useEffect(() => {
     if (data && data.length >= 0) {
-      console.log(data);
       setUserData(data[0]);
     }
   }, [data]);
