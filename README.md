@@ -8,19 +8,19 @@ A group project developed to get an understanding of ReactJS, NodeJS and MySQL. 
 
 ### Student credentials
 
-Email: andrews.a@gmail.com
+Email: andrews.a@gmail.com<br/>
 PW: 123aa
 
 ### Teacher credentials
 
-Email: jsalvador@homai.edu
+Email: jsalvador@homai.edu<br/>
 PW: 123js
 
 ## Running the application
 
 1. Download the code or clone the repository
-2. Create a DB in MySQL using the LevelUpWorks.sql  from /server folder
+2. Create a DB in MySQL using the LevelUpWorks.sql from /server folder
 3. Update the .env file with the configuration
-4. Open two terminal in VSCode.
-   a. In first terminal cd to /server folder and do <code>npm start</code>
+4. Open two terminal in VSCode.<br/>
+   a. In first terminal cd to /server folder and do <code>npm start</code><br/>
    b. In the second terminal cd to /client folder and do <code>npm start</code>. Application is ruuning on http://localhost:3000
