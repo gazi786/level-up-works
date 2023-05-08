@@ -7,6 +7,7 @@ import SignUp from "./SignUp";
 import { useNavigate } from "react-router-dom";
 import usePostFetch from "../../../hooks/usePostFetch";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { ModalContext } from "../../../contexts/ModalContext";
 
 const StudentForm = ({ modalLinks, activeLink, handleTitleClick }) => {
   const [userData, setUserData] = useState(null);
@@ -16,6 +17,7 @@ const StudentForm = ({ modalLinks, activeLink, handleTitleClick }) => {
   const navigate = useNavigate();
   const post = usePostFetch();
   const { login } = useContext(AuthContext);
+  const { handleModalClose } = useContext(ModalContext);
 
   const handleLogin = ({ e, formData }) => {
     e.preventDefault();
@@ -31,9 +33,10 @@ const StudentForm = ({ modalLinks, activeLink, handleTitleClick }) => {
   useEffect(() => {
     if (userData) {
       login(userData);
+      handleModalClose();
       navigate("/projects/projects-library", { replace: true });
     }
-  }, [userData, navigate]);
+  }, [userData, login, handleModalClose, navigate]);
 
   return (
     <Grid

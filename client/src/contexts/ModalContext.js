@@ -13,7 +13,6 @@ export const ModalProvider = ({ children }) => {
 
 	const handleModalClose = () => {
 		setOpenModal(false);
-		setAccessType('');
 	};
 
 	const value = {
