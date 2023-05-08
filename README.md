@@ -22,5 +22,5 @@ PW: 123js
 2. Create a DB in MySQL using the LevelUpWorks.sql from /server folder
 3. Update the .env file with the configuration
 4. Open two terminal in VSCode.<br/>
-   a. In first terminal cd to /server folder and do <code>npm start</code><br/>
-   b. In the second terminal cd to /client folder and do <code>npm start</code>. Application is ruuning on http://localhost:3000
+   a. In first terminal cd to /server folder and do <code>npm start</code>. Server is running on port in  the .env file.<br/>
+   b. In the second terminal cd to /client folder and do <code>npm start</code>. Application is running on http://localhost:3000
